@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { HeroUIProvider } from "@heroui/react";
+import { SessionProvider } from "next-auth/react";
+import CustomProvider from "@/components/provider/CustomProvider";
 
 export const metadata: Metadata = {
   title: "coffee diary app",
@@ -15,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={``}>
-        <HeroUIProvider>{children}</HeroUIProvider>
+        <CustomProvider>{children}</CustomProvider>
       </body>
     </html>
   );
